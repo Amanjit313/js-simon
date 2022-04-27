@@ -22,11 +22,6 @@ while (contatore < 5){
   }
 }
 
-// Stampo i numeri random
-console.log("Lista dei numeri casuali estratti" + " " + number);
-document.getElementById("numeri").innerHTML = "Hai 5 secondi per ricordarti questi numeri:" + " " + number;
-console.log("------------------------");
-
 // 5 secondi countdown
 const clock = setInterval(contoallarovescia, 1000);
 
@@ -34,6 +29,10 @@ console.log("Counter Inizio!");
 function contoallarovescia(){
   counter--;
   console.log(counter);
+
+  // Stampo i numeri random
+  document.getElementById("numeri").innerHTML = "Hai" + " " + counter + " " + "secondi per ricordarti questi numeri:" + " " + number;
+  
   if(counter < 1){
     clearInterval(clock);
     clearInterval(number);
@@ -41,6 +40,9 @@ function contoallarovescia(){
     aftercounter();
   }
 }
+
+console.log("Lista dei numeri casuali estratti" + " " + number);
+console.log("------------------------");
 
 // I numeri da indovinare tramite i prompt dopo i 5 secondi
 function aftercounter(){
