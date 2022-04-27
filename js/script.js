@@ -9,23 +9,37 @@
 
 let number = [];
 let contatore = 0;
+let contatoreprompt = 0;
 let counter = 6;
 
 while (contatore < 5){
   number = Math.floor(Math.random() * 10) + 1;
-  console.log(number);
+  console.log("Numero casuale" + " " + number);
   contatore++;
 }
 
-console.log("-----------------------");
+console.log("------------------------");
 
 const clock = setInterval(contoallarovescia, 1000);
 
+console.log("Counter Inizio!");
 function contoallarovescia(){
   counter--;
   console.log(counter);
-  if(counter < 2){
+  if(counter < 1){
     clearInterval(clock);
-    console.log("Tempo scaduto!");
+    console.log("Counter Fine!");
+    aftercounter();
   }
 }
+
+function aftercounter(){
+
+  while (contatoreprompt < 5){
+  let numberprompt  = parseInt (prompt("Inserisci il primo numero"));
+  console.log("Numero scelto" + " " + numberprompt);
+  contatoreprompt++;
+}
+
+}
+
